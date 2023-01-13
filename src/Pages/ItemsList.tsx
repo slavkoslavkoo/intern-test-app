@@ -8,7 +8,7 @@ const fetchData = async () => {
   return fetch('https://reqres.in/api/products').then(res => res.json());
 };
 
-const fetchFilteredData = async (id?: number) => {
+export const fetchFilteredData = async (id?: number) => {
   return fetch(`https://reqres.in/api/products/${id}`).then(res => res.json());
 };
 

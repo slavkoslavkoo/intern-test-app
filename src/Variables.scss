@@ -8,3 +8,9 @@ $border-radius-lg: 1.6rem;
   display: flex;
   flex-direction: column;
 }
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

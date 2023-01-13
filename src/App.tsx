@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ItemsList from './Pages/ItemsList';
 import './App.scss';
+import ItemPopup from './Components/Items/ItemPopup';
 
-function App() {
+const App: FC = () => {
   return (
     <main className={'container'}>
       <Routes>
-        <Route path='/' element={<ItemsList />} />
+        <Route path='/' element={<ItemsList />}>
+          <Route path='item/:id' element={<ItemPopup />} />
+        </Route>
       </Routes>
     </main>
   );
-}
+};
 
 export default App;

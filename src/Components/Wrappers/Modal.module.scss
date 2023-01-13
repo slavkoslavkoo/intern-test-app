@@ -1,0 +1,8 @@
+@import '../../Variables.scss';
+
+.modal-container {
+  z-index: 9999;
+  @include flex-center;
+  width: -webkit-fill-available;
+  height: 100vh;
+}

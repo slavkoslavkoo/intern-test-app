@@ -1,0 +1,10 @@
+$text-color: #2b2b2b;
+$main-bg: #efefef;
+$error: #ca1c1c;
+$border-radius-sm: 0.8rem;
+$border-radius-lg: 1.6rem;
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}

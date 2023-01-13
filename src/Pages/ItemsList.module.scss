@@ -1,0 +1,13 @@
+@import '../Variables.scss';
+
+.items {
+  .input {
+    padding: 1.2rem;
+    border-radius: $border-radius-sm;
+  }
+
+  @include flex-column;
+  gap: 1.2rem;
+  margin: 0 auto;
+  max-width: 90rem;
+}

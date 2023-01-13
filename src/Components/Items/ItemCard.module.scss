@@ -1,0 +1,28 @@
+@import '../../Variables.scss';
+
+.error {
+  background-color: #fff;
+  border-radius: $border-radius-sm;
+  padding: 0.4rem 1.2rem;
+  color: $error;
+  font-size: 1.6rem;
+}
+
+.body {
+  color: $text-color;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .year {
+    font-size: 1.6rem;
+  }
+
+  .number {
+    font-size: 3.2rem;
+  }
+}

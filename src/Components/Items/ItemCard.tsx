@@ -1,30 +1,34 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import Card from '../Wrappers/Card';
 import { ItemProps } from '../../types/ItemTypes';
+import { useDispatch } from 'react-redux';
 
 import styles from './ItemCard.module.scss';
-import { useNavigate } from 'react-router-dom';
+import { modalSliceActions } from '../../store/modalSlice';
 
 const ItemCard: FC<ItemProps> = ({ item }): JSX.Element => {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const modalCardHandler = (): void => {
+    dispatch(modalSliceActions.showModalAction({ item: item }));
+  };
+
   return (
-    <Card color={item?.color}>
-      {item ? (
-        <div className={styles?.body}>
-          <p className={styles.number}>{item?.id}</p>
-          <div>
-            <h2
-              onClick={() => navigate(`item/${item?.id}`)}
-              className={styles.title}>
-              {item?.name}
-            </h2>
-            <p className={styles.year}>{item?.year}</p>
+    <>
+      <Card color={item?.color}>
+        {item ? (
+          <div onClick={modalCardHandler} className={styles?.body}>
+            <p className={styles.number}>{item?.id}</p>
+            <div>
+              <h2 className={styles.title}>{item?.name}</h2>
+              <p className={styles.year}>{item?.year}</p>
+            </div>
           </div>
-        </div>
-      ) : (
-        <p className={styles.error}>There's no such item ID</p>
-      )}
-    </Card>
+        ) : (
+          <p className={styles.error}>There's no such item ID</p>
+        )}
+      </Card>
+    </>
   );
 };
 

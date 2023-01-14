@@ -1,0 +1,9 @@
+@import '../../Variables.scss';
+
+.error {
+  background-color: $error;
+  padding: 3.6rem;
+  font-size: 3.2rem;
+  border-radius: $border-radius-lg;
+  color: #fff;
+}

@@ -1,22 +1,30 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
+import { ItemProps } from '../../types/ItemTypes';
 import Modal from '../Wrappers/Modal';
+import { FiX } from 'react-icons/fi';
 
 import styles from './ItemPopup.module.scss';
-import { fetchFilteredData } from '../../Pages/ItemsList';
-import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { modalSliceActions } from '../../store/modalSlice';
 
-const ItemPopup: FC = () => {
-  const params = useParams<{ id: string }>();
-  const { data } = useQuery('item', async () => {
-    const response = await fetchFilteredData(+params.id);
-    return response;
-  });
+const ItemPopup: FC<ItemProps> = ({ item }): JSX.Element => {
+  const dispatch = useDispatch();
 
-  console.log(data);
+  const closeModalHandler = (): void => {
+    dispatch(modalSliceActions.hideModalAction());
+  };
+
   return (
     <Modal>
-      <div className={styles.itemcard}></div>
+      <div style={{ backgroundColor: `${item?.color}` }} className={styles.itemcard}>
+        <button onClick={closeModalHandler} className={styles.close}>
+          <FiX />
+        </button>
+        <p>id: {item?.id}</p>
+        <p>name: {item?.name}</p>
+        <p>year: {item?.year}</p>
+        <p>pantone_value: {item?.pantone_value}</p>
+      </div>
     </Modal>
   );
 };

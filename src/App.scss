@@ -10,12 +10,22 @@ body {
   background-color: $main-bg;
 }
 
+ul {
+  list-style: none;
+}
+
 input {
   border: none;
 
   &:focus {
     outline: none;
   }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: none;
 }
 
 * {

@@ -1,13 +1,23 @@
 @import '../Variables.scss';
 
 .items {
-  .input {
-    padding: 1.2rem;
-    border-radius: $border-radius-sm;
-  }
-
   @include flex-column;
   gap: 1.2rem;
   margin: 0 auto;
   max-width: 90rem;
+  height: 90vh;
+
+  .input {
+    padding: 1.2rem;
+    border-radius: $border-radius-sm;
+    justify-self: flex-start;
+    width: -webkit-fill-available;
+  }
+
+  .itemlist {
+    height: 100%;
+    @include flex-column;
+    justify-content: center;
+    gap: 2.4rem;
+  }
 }

@@ -1,0 +1,34 @@
+@import '../../Variables.scss';
+
+.close {
+  background-color: transparent;
+  align-self: flex-end;
+  svg {
+    color: $text-color;
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+}
+
+.itemcard {
+  @include flex-column;
+  color: $text-color;
+  background-color: #fff;
+  border-radius: $border-radius-sm;
+  padding: 2.4rem;
+  padding-bottom: 4.2rem;
+  font-size: 3.2rem;
+  animation: modalOpen 0.3s;
+  box-shadow: 0 0.2rem 2rem 4px #00000033;
+}
+
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,41 @@
+@import '../../Variables.scss';
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  gap: 2.4rem;
+  padding: 1.2rem 0;
+  width: -webkit-fill-available;
+
+  .pagebtn {
+    color: $text-color;
+    @include flex-center;
+    $size: 3.6rem;
+    border-radius: $size / 2;
+    width: $size;
+    height: $size;
+    background-color: #fff;
+    padding: 1.2rem;
+
+    &.active {
+      border: 0.1rem solid $text-color;
+    }
+  }
+
+  @mixin disabled {
+    cursor: auto;
+    color: #bcbcbc;
+  }
+
+  .prevbtn {
+    &.disabled {
+      @include disabled();
+    }
+  }
+
+  .nextbtn {
+    &.disabled {
+      @include disabled();
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import '../../Variables.scss';
+
+$size: 7.2rem;
+.spinner {
+  width: $size;
+  height: $size;
+  border: 0.6rem solid $text-color;
+  border-bottom-color: transparent;
+  border-radius: $size / 2;
+  animation: infinite spinner 1s linear;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(1turn);
+  }
+}
